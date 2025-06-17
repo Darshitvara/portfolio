@@ -18,7 +18,10 @@ const Navigation = () => {
   const navItems = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
+    { href: '#tech-stack', label: 'Tech Stack' },
     { href: '#projects', label: 'Projects' },
+    { href: '#resume', label: 'Resume' },
+    { href: '#fun-facts', label: 'Fun Facts' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -33,12 +36,12 @@ const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-200 relative group"
+                className="text-foreground/80 hover:text-foreground transition-colors duration-200 relative group text-sm"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
