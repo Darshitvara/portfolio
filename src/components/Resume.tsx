@@ -65,7 +65,6 @@ const Resume = () => {
       }
     ],
     skills: {
-      technical: ["JavaScript", "TypeScript", "React", "Node.js", "Python", "PostgreSQL", "MongoDB", "Docker", "AWS"],
       soft: ["Leadership", "Problem Solving", "Communication", "Team Collaboration", "Time Management", "Critical Thinking"]
     }
   };
@@ -213,19 +212,7 @@ const Resume = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-6 pt-4">
-                  <Card className="animate-fade-in">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Technical Skills</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2">
-                        {resumeData.skills.technical.map((skill, index) => (
-                          <Badge key={index} variant="secondary">{skill}</Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                <div className="pt-4">
                   <Card className="animate-fade-in">
                     <CardHeader>
                       <CardTitle className="text-lg">Soft Skills</CardTitle>
