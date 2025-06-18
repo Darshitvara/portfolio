@@ -66,12 +66,7 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// Enhanced color palette
-				'classic-gold': 'hsl(var(--classic-gold))',
-				'classic-navy': 'hsl(var(--classic-navy))',
-				'warm-gray': 'hsl(var(--warm-gray))',
-				'cream': 'hsl(var(--cream))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -98,7 +93,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(30px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -108,17 +103,7 @@ export default {
 				'slide-in-left': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateX(-50px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateX(0)'
-					}
-				},
-				'slide-in-right': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateX(50px)'
+						transform: 'translateX(-30px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -130,37 +115,16 @@ export default {
 						transform: 'translateY(0px)'
 					},
 					'50%': {
-						transform: 'translateY(-20px)'
-					}
-				},
-				'gentle-bounce': {
-					'0%, 100%': {
-						transform: 'translateY(0)'
-					},
-					'50%': {
 						transform: 'translateY(-10px)'
-					}
-				},
-				'scale-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'scale(0.95)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'scale(1)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-				'slide-in-left': 'slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-				'slide-in-right': 'slide-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-				'float': 'float 6s ease-in-out infinite',
-				'gentle-bounce': 'gentle-bounce 2s ease-in-out infinite',
-				'scale-in': 'scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in-left': 'slide-in-left 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
