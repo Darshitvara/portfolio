@@ -11,8 +11,8 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Brand */}
             <div>
-              <h3 className="text-2xl font-playfair font-bold text-gradient mb-4">
-                Alex Johnson
+              <h3 className="text-2xl font-playfair font-bold text-gradient-reverse mb-4">
+                Darshit Vara
               </h3>
               <p className="text-primary-foreground/80 leading-relaxed">
                 Final-year Computer Science student passionate about creating 
@@ -46,7 +46,7 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Let's Connect</h4>
               <div className="flex space-x-4 mb-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Darshitvara" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -54,7 +54,8 @@ const Footer = () => {
                   <Github size={20} />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/darshit-vara-241b55246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " 
+                  // href="https://linkedin.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -62,7 +63,7 @@ const Footer = () => {
                   <Linkedin size={20} />
                 </a>
                 <a 
-                  href="mailto:alex.johnson@email.com"
+                  href="mailto:connectxwolfie@gmail.com"
                   className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 >
                   <Mail size={20} />
@@ -77,7 +78,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} Alex Johnson. Designed and built with passion using React & Tailwind CSS.
+              © {currentYear} Darshit Vara. Designed and built with passion using React & Tailwind CSS.
             </p>
           </div>
         </div>

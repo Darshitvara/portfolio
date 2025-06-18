@@ -4,7 +4,7 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <><section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5"></div>
       
@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6">
-            <span className="text-gradient">Alex Johnson</span>
+            <span className="text-gradient">Darshit Codes</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">
             Final-Year Computer Science Student
@@ -43,15 +43,19 @@ const Hero = () => {
           </div>
 
           {/* Scroll indicator */}
-          <div className="animate-bounce">
-            <a href="#about" className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors">
+          <div className="animate-bounce ">
+            <a href="#about" className="inline-flex items-center m-4  text-muted-foreground hover:text-foreground transition-colors">
               <span className="mr-2">Scroll to explore</span>
               <ArrowDown size={20} />
             </a>
           </div>
         </div>
+        
       </div>
+      
     </section>
+   
+</>
   );
 };
 

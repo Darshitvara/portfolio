@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from "emailjs-com"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,39 +26,72 @@ const Contact = () => {
     });
   };
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    
+  const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    subject: formData.subject,
+    message: formData.message,
+  };
+
+  const SERVICE_ID = "service_7c565sj";
+  const TEMPLATE_ID = "template_f3mruzl"
+  const PUBLIC_KEY = "DebhY9XomUkk4pRV5"
+
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+    toast({
+      title: "Message sent successfully!",
+      description: "Thank you for reaching out. I'll get back to you soon.",
+    });
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  } catch (error) {
+    toast({
+      title: "Failed to send message",
+      description: "Please try again or contact me via email.",
+      variant: "destructive",
+    });
+    console.error("Email send error:", error);
+  }
+
+  setIsSubmitting(false);
+
+
     // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    // setTimeout(() => {
+    //   toast({
+    //     title: "Message sent successfully!",
+    //     description: "Thank you for reaching out. I'll get back to you soon.",
+    //   });
+    //   setFormData({ name: '', email: '', subject: '', message: '' });
+    //   setIsSubmitting(false);
+    // }, 1000);
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.johnson@email.com',
-      href: 'mailto:alex.johnson@email.com'
+      value: 'connectxwolfie@gmail.com',
+      href: 'mailto:connectxwolfie@gmail.com'
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/alexjohnson',
-      href: 'https://github.com'
+      value: 'github.com/Darshitvara',
+      href: 'https://github.com/Darshitvara'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/alexjohnson',
-      href: 'https://linkedin.com'
+      value: 'linkedin.com/in/darshit vara',
+      href: 'https://www.linkedin.com/in/darshit-vara-241b55246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      // href: 'https://linkedin.com/Darshit vara'
     }
   ];
 

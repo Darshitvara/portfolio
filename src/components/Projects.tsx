@@ -95,13 +95,16 @@ const Projects = () => {
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === category 
                     ? 'bg-accent hover:bg-accent/90 text-accent-foreground' 
-                    : 'hover:border-accent hover:text-accent'
+                    : 'hover:border-accent hover:text-accent-foreground'
+                    // : 'hover:border-accent hover:text-accent'
                 }`}
               >
                 {category}
               </Button>
             ))}
           </div>
+
+
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
