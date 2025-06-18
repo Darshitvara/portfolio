@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Coffee, Music, Chess, Laptop } from 'lucide-react';
+import { Coffee, Music, Laptop } from 'lucide-react';
 
 const FunFacts = () => {
   const [activeToggle, setActiveToggle] = useState<{ [key: string]: string }>({
@@ -36,39 +36,6 @@ const FunFacts = () => {
         { key: 'frontend', label: 'Frontend', icon: Laptop, color: 'bg-blue-500' },
         { key: 'backend', label: 'Backend', icon: Laptop, color: 'bg-red-500' }
       ]
-    }
-  ];
-
-  const lifeTimeline = [
-    {
-      age: '13',
-      event: 'First line of code',
-      description: 'Started with HTML & CSS, built my first webpage',
-      icon: '💻'
-    },
-    {
-      age: '16',
-      event: 'Built first mobile app',
-      description: 'Created a simple to-do app using React Native',
-      icon: '📱'
-    },
-    {
-      age: '18',
-      event: 'Started university',
-      description: 'Began Computer Science degree, joined programming club',
-      icon: '🎓'
-    },
-    {
-      age: '20',
-      event: 'First internship',
-      description: 'Software engineering intern at a tech startup',
-      icon: '💼'
-    },
-    {
-      age: '21',
-      event: 'Open source contributor',
-      description: 'Started contributing to popular open source projects',
-      icon: '🌟'
     }
   ];
 
@@ -114,7 +81,7 @@ const FunFacts = () => {
             Fun Facts & Personal Side
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the code. Discover my interests, preferences, and the journey that shaped me.
+            Get to know the person behind the code. Discover my interests and preferences.
           </p>
         </div>
 
@@ -150,36 +117,6 @@ const FunFacts = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-
-        {/* Life Timeline */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-playfair font-semibold text-center mb-8">My Journey</h3>
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent"></div>
-              <div className="space-y-8">
-                {lifeTimeline.map((item, index) => (
-                  <div key={index} className="relative flex items-start animate-slide-in-left" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex-shrink-0 w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl relative z-10">
-                      {item.icon}
-                    </div>
-                    <Card className="ml-6 flex-grow">
-                      <CardHeader>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="secondary">Age {item.age}</Badge>
-                          <CardTitle className="text-lg">{item.event}</CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
