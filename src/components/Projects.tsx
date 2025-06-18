@@ -2,51 +2,69 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Github, ExternalLink, Calendar, Users, Zap } from 'lucide-react';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       title: 'AI-Powered Task Manager',
       description: 'A smart productivity app that uses machine learning to prioritize tasks and predict completion times.',
+      detailedDescription: 'This comprehensive task management application leverages artificial intelligence to revolutionize productivity. The system analyzes user behavior patterns, task complexity, and historical completion data to provide intelligent task prioritization. Features include automated deadline suggestions, workload balancing, smart notifications, and productivity analytics. The ML model continuously learns from user interactions to improve accuracy over time.',
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
       category: 'AI/ML',
       tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true
+      github: 'https://github.com/username/ai-task-manager',
+      demo: 'https://ai-task-manager-demo.com',
+      featured: true,
+      timeline: '3 months',
+      teamSize: '4 developers',
+      highlights: ['90% accuracy in deadline prediction', '40% increase in user productivity', 'Real-time collaboration features']
     },
     {
       title: 'Real-time Collaboration Platform',
       description: 'A web application enabling real-time document editing and video conferencing for remote teams.',
+      detailedDescription: 'A comprehensive collaboration suite designed for modern remote teams. The platform combines real-time document editing with integrated video conferencing, screen sharing, and project management tools. Built with scalability in mind, it supports thousands of concurrent users with millisecond-level synchronization. Features include version control, role-based permissions, integration APIs, and advanced security measures.',
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
       category: 'Web',
       tech: ['Next.js', 'WebRTC', 'Socket.io', 'MongoDB'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true
+      github: 'https://github.com/username/collab-platform',
+      demo: 'https://collab-platform-demo.com',
+      featured: true,
+      timeline: '6 months',
+      teamSize: '6 developers',
+      highlights: ['Sub-100ms latency', '99.9% uptime', 'End-to-end encryption']
     },
     {
       title: 'Mobile Expense Tracker',
       description: 'Cross-platform mobile app for tracking expenses with smart categorization and budget insights.',
+      detailedDescription: 'An intelligent expense tracking application that simplifies personal finance management. Using machine learning for automatic transaction categorization, receipt scanning with OCR, and predictive budget analytics. The app provides detailed spending insights, bill reminders, and financial goal tracking. Supports multiple currencies, bank integrations, and family sharing features.',
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop',
       category: 'Mobile',
       tech: ['React Native', 'TypeScript', 'Firebase', 'Chart.js'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false
+      github: 'https://github.com/username/expense-tracker',
+      demo: 'https://expense-tracker-demo.com',
+      featured: false,
+      timeline: '4 months',
+      teamSize: '3 developers',
+      highlights: ['95% accurate categorization', '50K+ downloads', 'Offline functionality']
     },
     {
       title: 'Data Visualization Dashboard',
       description: 'Interactive dashboard for analyzing large datasets with custom visualizations and real-time updates.',
+      detailedDescription: 'A powerful analytics platform that transforms complex datasets into actionable insights through interactive visualizations. Features custom chart builders, real-time data streaming, advanced filtering, and collaborative sharing. Supports multiple data sources, automated report generation, and embedded analytics for third-party applications. Optimized for handling millions of data points with smooth performance.',
       image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop',
       category: 'Data Science',
       tech: ['D3.js', 'Python', 'Pandas', 'PostgreSQL'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false
+      github: 'https://github.com/username/data-dashboard',
+      demo: 'https://data-dashboard-demo.com',
+      featured: false,
+      timeline: '5 months',
+      teamSize: '5 developers',
+      highlights: ['10M+ data points processed', 'Real-time streaming', 'Custom visualization engine']
     }
   ];
 
@@ -90,12 +108,13 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.title} 
-                className={`group hover:shadow-xl transition-all duration-500 overflow-hidden ${
+                className={`group hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer ${
                   project.featured ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
                 }}
+                onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -103,18 +122,8 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <Button size="sm" variant="secondary" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github size={16} className="mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button size="sm" className="bg-accent hover:bg-accent/90" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        Live Demo
-                      </a>
-                    </Button>
+                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-semibold">Click to view details</span>
                   </div>
                 </div>
                 
@@ -164,6 +173,93 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
+      {/* Project Details Modal */}
+      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedProject && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold mb-2">
+                  {selectedProject.title}
+                </DialogTitle>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <Calendar size={16} />
+                    {selectedProject.timeline}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Users size={16} />
+                    {selectedProject.teamSize}
+                  </div>
+                  <span className="px-2 py-1 bg-accent/10 text-accent rounded-full text-xs">
+                    {selectedProject.category}
+                  </span>
+                </div>
+              </DialogHeader>
+
+              <div className="space-y-6">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Project Overview</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {selectedProject.detailedDescription}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Zap size={20} />
+                    Key Highlights
+                  </h3>
+                  <ul className="space-y-2">
+                    {selectedProject.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
+                        <span className="w-2 h-2 bg-accent rounded-full"></span>
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex gap-4 pt-4 border-t">
+                  <Button asChild className="flex-1">
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                      <Github size={16} className="mr-2" />
+                      View Repository
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild className="flex-1">
+                    <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={16} className="mr-2" />
+                      Live Demo
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

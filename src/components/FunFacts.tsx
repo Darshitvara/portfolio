@@ -121,7 +121,7 @@ const FunFacts = () => {
         </div>
 
         {/* Hobbies & Interests */}
-        <div>
+        <div className="mb-16">
           <h3 className="text-2xl font-playfair font-semibold text-center mb-8">Hobbies & Interests</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {hobbies.map((hobby, index) => (
@@ -136,6 +136,57 @@ const FunFacts = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Technical Skills */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-playfair font-semibold text-center mb-8">Technical Skills</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-lg">Frontend Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary">React</Badge>
+                  <Badge variant="secondary">TypeScript</Badge>
+                  <Badge variant="secondary">Next.js</Badge>
+                  <Badge variant="secondary">Tailwind CSS</Badge>
+                  <Badge variant="secondary">Vue.js</Badge>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-lg">Backend Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary">Node.js</Badge>
+                  <Badge variant="secondary">Python</Badge>
+                  <Badge variant="secondary">Express</Badge>
+                  <Badge variant="secondary">FastAPI</Badge>
+                  <Badge variant="secondary">PostgreSQL</Badge>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-lg">Tools & Technologies</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary">Git</Badge>
+                  <Badge variant="secondary">Docker</Badge>
+                  <Badge variant="secondary">AWS</Badge>
+                  <Badge variant="secondary">Figma</Badge>
+                  <Badge variant="secondary">MongoDB</Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
