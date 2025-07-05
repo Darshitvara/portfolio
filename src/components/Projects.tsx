@@ -166,10 +166,10 @@ const Projects = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="px-8 py-6 text-lg hover:border-accent hover:text-accent"
+              className="px-8 py-6 text-lg "
               asChild
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Darshitvara" target="_blank" rel="noopener noreferrer">
                 View All Projects on GitHub
               </a>
             </Button>
