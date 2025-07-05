@@ -162,7 +162,7 @@ const Projects = () => {
           </div>
 
           {/* View More Button */}
-          <div className="text-center mt-12 animate-fade-in">
+          <div className="text-center mt-12 animate-fade-in hover:bg-transparent ">
             <Button 
               variant="outline" 
               size="lg"
