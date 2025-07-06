@@ -140,31 +140,39 @@ const FunFacts = () => {
   ];
 
   const hobbies = [
-    {
-      name: "Photography",
-      description: "Capturing moments and landscapes",
-      icon: "📸",
-      level: "Intermediate",
-    },
-    {
-      name: "Chess",
-      description: "Strategic thinking and problem solving",
-      icon: "♟️",
-      level: "Advanced",
-    },
-    {
-      name: "Listening Music",
-      description: "Creating electronic music in my free time",
-      icon: "🎵",
-      level: "Beginner",
-    },
-    {
-      name: "Cooking",
-      description: "Experimenting with international cuisines",
-      icon: "👨‍🍳",
-      level: "Intermediate",
-    },
-  ];
+  {
+    name: "Reading Psychology",
+    description: "Exploring psychological concepts and theories to understand human behavior and the mind.",
+    icon: "🧠",
+    level: "Intermediate",
+  },
+  {
+    name: "Chess",
+    description: "Strategic thinking and problem solving.",
+    icon: "♟️",
+    level: "Advanced",
+  },
+  {
+    name: "Martial Arts",
+    description: "Practicing discipline, focus, and physical fitness through martial arts training.",
+    icon: "🥋",
+    level: "Intermediate",
+  },
+  {
+    name: "Networking",
+    description: "Building connections and engaging with like-minded professionals and communities.",
+    icon: "🌐",
+    level: "Intermediate",
+  },
+  // {
+  //   name: "Listening to Music",
+  //   description: "Enjoying music across genres to relax and find inspiration.",
+  //   icon: "🎵",
+  //   level: "Beginner",
+  // },
+  
+];
+
 
   const handleToggle = (toggleId: string, option: string) => {
     setActiveToggle((prev) => ({

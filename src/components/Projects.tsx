@@ -41,7 +41,7 @@ const Projects = () => {
       category: "Web",
       tech: ["react.js", "WebRTC", "Socket.io", "Porstgresql"],
       github: "https://github.com/Darshitvara/",
-      demo: "https://colab-point.darshitvara.me/login",
+      demo: "https://colab-point.darshitvara.me/",
       featured: true,
       timeline: "1 months",
       teamSize: "1 developer",

@@ -4,33 +4,33 @@ const About = () => {
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+      items: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
       category: "Backend",
       items: ["Node.js", "Python", "PostgreSQL", "MongoDB"],
     },
-    { category: "Tools", items: ["Git", "Docker", "AWS", "Figma"] },
+    { category: "Tools", items: ["Git", "Docker", "AWS" ,"Cloudfare"] },
     {
       category: "AI/ML",
-      items: ["TensorFlow", "PyTorch", "Scikit-learn", "OpenAI API"],
+      items: ["OpenAI API"],
     },
   ];
 
   const experiences = [
     {
-      title: "Computer Science Student",
-      organization: "University of Technology",
+      title: "Full Stack Intern",
+      organization: "Tatvasoft(virtual)",
       period: "2025 - continue",
       description:
-        "Pursuing Bachelor of Science in Computer Science with focus on AI and Software Engineering.",
+        "Developed full-stack web applications.",
     },
     {
       title: "Software Engineering Intern",
-      organization: "TechCorp Solutions",
-      period: "Summer 2024",
+      organization: "IBM(virtual)",
+      period: "2025 - continue",
       description:
-        "Developed full-stack web applications and contributed to AI-driven features for customer analytics.",
+        "contributed to AI-driven features for customer analytics.",
     },
     // ,
     // {
