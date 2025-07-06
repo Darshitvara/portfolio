@@ -1,75 +1,100 @@
-
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Github, ExternalLink, Calendar, Users, Zap } from 'lucide-react';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Github, ExternalLink, Calendar, Users, Zap } from "lucide-react";
+import ecommerceImg from "../assets/ecommerce.png";
+import portfolioImg from "../assets/portfolio.png";
+import collabpointImg from "../assets/collab-point.png";
 
 const Projects = () => {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
+    // {
+    //   title: 'AI-Powered Task Manager',
+    //   description: 'A smart productivity app that uses machine learning to prioritize tasks and predict completion times.',
+    //   detailedDescription: 'This comprehensive task management application leverages artificial intelligence to revolutionize productivity. The system analyzes user behavior patterns, task complexity, and historical completion data to provide intelligent task prioritization. Features include automated deadline suggestions, workload balancing, smart notifications, and productivity analytics. The ML model continuously learns from user interactions to improve accuracy over time.',
+    //   image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
+    //   category: 'AI/ML',
+    //   tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
+    //   github: 'https://github.com/Darshitvara/',
+    //   demo: 'https://ai-task-manager-demo.com',
+    //   featured: true,
+    //   timeline: '3 months',
+    //   teamSize: '4 developers',
+    //   highlights: ['90% accuracy in deadline prediction', '40% increase in user productivity', 'Real-time collaboration features']
+    // },
     {
-      title: 'AI-Powered Task Manager',
-      description: 'A smart productivity app that uses machine learning to prioritize tasks and predict completion times.',
-      detailedDescription: 'This comprehensive task management application leverages artificial intelligence to revolutionize productivity. The system analyzes user behavior patterns, task complexity, and historical completion data to provide intelligent task prioritization. Features include automated deadline suggestions, workload balancing, smart notifications, and productivity analytics. The ML model continuously learns from user interactions to improve accuracy over time.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-      category: 'AI/ML',
-      tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-      github: 'https://github.com/username/ai-task-manager',
-      demo: 'https://ai-task-manager-demo.com',
+      title: "Real-time Collaboration Platform",
+      description:
+        "A web application enabling real-time document editing for remote teams.",
+      detailedDescription:
+        "A comprehensive collaboration suite designed for modern remote teams. The platform combines real-time document editing and project management tools. Built with scalability in mind, it supports thousands of concurrent users with millisecond-level synchronization. Features include role-based permissions, integration APIs, and advanced security measures.",
+      image: collabpointImg,
+      category: "Web",
+      tech: ["react.js", "WebRTC", "Socket.io", "Porstgresql"],
+      github: "https://github.com/Darshitvara/",
+      demo: "https://colab-point.darshitvara.me/login",
       featured: true,
-      timeline: '3 months',
-      teamSize: '4 developers',
-      highlights: ['90% accuracy in deadline prediction', '40% increase in user productivity', 'Real-time collaboration features']
+      timeline: "1 months",
+      teamSize: "1 developer",
+      highlights: [
+        "Sub-100ms latency",
+        "99.9% uptime",
+        "End-to-end encryption",
+      ],
     },
     {
-      title: 'Real-time Collaboration Platform',
-      description: 'A web application enabling real-time document editing and video conferencing for remote teams.',
-      detailedDescription: 'A comprehensive collaboration suite designed for modern remote teams. The platform combines real-time document editing with integrated video conferencing, screen sharing, and project management tools. Built with scalability in mind, it supports thousands of concurrent users with millisecond-level synchronization. Features include version control, role-based permissions, integration APIs, and advanced security measures.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
-      category: 'Web',
-      tech: ['Next.js', 'WebRTC', 'Socket.io', 'MongoDB'],
-      github: 'https://github.com/username/collab-platform',
-      demo: 'https://collab-platform-demo.com',
+      title: "Modern E-commerce Platform",
+      description:
+        "A full-featured e-commerce web application for a new mobile brand, with product catalog, cart, orders, and secure authentication.",
+      detailedDescription:
+        "This modern e-commerce solution is designed for a brand-new mobile company, providing a seamless shopping experience. Features include dynamic product listings, add-to-cart functionality, user registration/login, order tracking, admin dashboard for inventory and orders, and dummy payment gateway integration. The frontend is highly responsive with modern animations and UI components. Built with scalability and security in mind.",
+      image: ecommerceImg,
+      category: "Web",
+      tech: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/Darshitvara/",
+      demo: "https://ecommerce-website.darshitvara.me/",
       featured: true,
-      timeline: '6 months',
-      teamSize: '6 developers',
-      highlights: ['Sub-100ms latency', '99.9% uptime', 'End-to-end encryption']
+      timeline: "1 months",
+      teamSize: "1 developers",
+      highlights: [
+        "Fully functional cart & checkout",
+        "Admin panel for managing products/orders",
+        "JWT-based authentication and authorization",
+      ],
     },
     {
-      title: 'Mobile Expense Tracker',
-      description: 'Cross-platform mobile app for tracking expenses with smart categorization and budget insights.',
-      detailedDescription: 'An intelligent expense tracking application that simplifies personal finance management. Using machine learning for automatic transaction categorization, receipt scanning with OCR, and predictive budget analytics. The app provides detailed spending insights, bill reminders, and financial goal tracking. Supports multiple currencies, bank integrations, and family sharing features.',
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop',
-      category: 'Mobile',
-      tech: ['React Native', 'TypeScript', 'Firebase', 'Chart.js'],
-      github: 'https://github.com/username/expense-tracker',
-      demo: 'https://expense-tracker-demo.com',
-      featured: false,
-      timeline: '4 months',
-      teamSize: '3 developers',
-      highlights: ['95% accurate categorization', '50K+ downloads', 'Offline functionality']
+      title: "Portfolio ",
+      description:
+        "A modern personal portfolio website showcasing my projects, skills, blogs, and contact information.",
+      detailedDescription:
+        "This personal developer portfolio website is designed to present my professional profile, projects, and technical skills in an engaging and modern format. Built with React and Tailwind CSS for a sleek, responsive design, it features animated sections, dynamic project modals, and a blog section powered by Markdown. The site includes filtering for projects, social media integration, and a contact form. Deployed on Vercel for fast global performance and continuous deployment from GitHub.",
+      image: portfolioImg,
+      category: "Web",
+      tech: ["React", "Tailwind CSS"],
+      github: "https://github.com/Darshitvara/",
+      demo: "https://www.darshitvara.me/",
+      featured: true,
+      timeline: "1 months",
+      teamSize: "1 developers",
+      highlights: [
+        "One-click deployment to vercel Hosting",
+        "Custom domain and SEO-friendly pages",
+      ],
     },
-    {
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive dashboard for analyzing large datasets with custom visualizations and real-time updates.',
-      detailedDescription: 'A powerful analytics platform that transforms complex datasets into actionable insights through interactive visualizations. Features custom chart builders, real-time data streaming, advanced filtering, and collaborative sharing. Supports multiple data sources, automated report generation, and embedded analytics for third-party applications. Optimized for handling millions of data points with smooth performance.',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop',
-      category: 'Data Science',
-      tech: ['D3.js', 'Python', 'Pandas', 'PostgreSQL'],
-      github: 'https://github.com/username/data-dashboard',
-      demo: 'https://data-dashboard-demo.com',
-      featured: false,
-      timeline: '5 months',
-      teamSize: '5 developers',
-      highlights: ['10M+ data points processed', 'Real-time streaming', 'Custom visualization engine']
-    }
   ];
 
-  const categories = ['All', ...new Set(projects.map(p => p.category))];
-  const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
+  const categories = ["All", ...new Set(projects.map((p) => p.category))];
+  const filteredProjects =
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="py-20">
@@ -81,7 +106,8 @@ const Projects = () => {
               Featured <span className="text-gradient">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A showcase of my technical skills and creative problem-solving abilities
+              A showcase of my technical skills and creative problem-solving
+              abilities
             </p>
           </div>
 
@@ -93,10 +119,10 @@ const Projects = () => {
                 variant={filter === category ? "default" : "outline"}
                 onClick={() => setFilter(category)}
                 className={`px-6 py-2 transition-all duration-300 ${
-                  filter === category 
-                    ? 'bg-accent hover:bg-accent/90 text-accent-foreground' 
-                    : 'hover:border-accent hover:text-accent-foreground'
-                    // : 'hover:border-accent hover:text-accent'
+                  filter === category
+                    ? "bg-accent hover:bg-accent/90 text-accent-foreground"
+                    : "hover:border-accent hover:text-accent-foreground"
+                  // : 'hover:border-accent hover:text-accent'
                 }`}
               >
                 {category}
@@ -104,32 +130,32 @@ const Projects = () => {
             ))}
           </div>
 
-
-
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card 
-                key={project.title} 
+              <Card
+                key={project.title}
                 className={`group hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer ${
-                  project.featured ? 'md:col-span-2 lg:col-span-1' : ''
+                  project.featured ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
-                style={{ 
+                style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white font-semibold">Click to view details</span>
+                    <span className="text-white font-semibold">
+                      Click to view details
+                    </span>
                   </div>
                 </div>
-                
+
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl group-hover:text-accent transition-colors duration-300">
@@ -140,15 +166,15 @@ const Projects = () => {
                     </span>
                   </div>
                 </CardHeader>
-                
+
                 <CardContent>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
-                      <span 
+                      <span
                         key={tech}
                         className="text-xs px-3 py-1 bg-muted text-muted-foreground rounded-full"
                       >
@@ -163,13 +189,17 @@ const Projects = () => {
 
           {/* View More Button */}
           <div className="text-center mt-12 animate-fade-in hover:bg-transparent ">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="px-8 py-6 text-lg "
               asChild
             >
-              <a href="https://github.com/Darshitvara" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Darshitvara"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View All Projects on GitHub
               </a>
             </Button>
@@ -178,7 +208,10 @@ const Projects = () => {
       </div>
 
       {/* Project Details Modal */}
-      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+      <Dialog
+        open={!!selectedProject}
+        onOpenChange={() => setSelectedProject(null)}
+      >
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           {selectedProject && (
             <>
@@ -202,14 +235,16 @@ const Projects = () => {
               </DialogHeader>
 
               <div className="space-y-6">
-                <img 
-                  src={selectedProject.image} 
+                <img
+                  src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-64 object-cover rounded-lg"
                 />
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Project Overview</h3>
+                  <h3 className="text-lg font-semibold mb-2">
+                    Project Overview
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {selectedProject.detailedDescription}
                   </p>
@@ -222,7 +257,10 @@ const Projects = () => {
                   </h3>
                   <ul className="space-y-2">
                     {selectedProject.highlights.map((highlight, index) => (
-                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
+                      <li
+                        key={index}
+                        className="flex items-center gap-2 text-muted-foreground"
+                      >
                         <span className="w-2 h-2 bg-accent rounded-full"></span>
                         {highlight}
                       </li>
@@ -231,10 +269,12 @@ const Projects = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Technologies Used</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Technologies Used
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech.map((tech) => (
-                      <span 
+                      <span
                         key={tech}
                         className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm"
                       >
@@ -246,13 +286,21 @@ const Projects = () => {
 
                 <div className="flex gap-4 pt-4 border-t">
                   <Button asChild className="flex-1">
-                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github size={16} className="mr-2" />
                       View Repository
                     </a>
                   </Button>
                   <Button variant="outline" asChild className="flex-1">
-                    <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink size={16} className="mr-2" />
                       Live Demo
                     </a>
