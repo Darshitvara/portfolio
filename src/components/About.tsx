@@ -4,7 +4,7 @@ const About = () => {
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Tailwind CSS"],
+      items: ["React", "TypeScript", "Tailwind CSS","Bootstrap"],
     },
     {
       category: "Backend",
@@ -18,17 +18,17 @@ const About = () => {
   ];
 
   const experiences = [
-    {
-      title: "Full Stack Intern",
-      organization: "Tatvasoft(virtual)",
-      period: "2025 - continue",
-      description:
-        "Developed full-stack web applications.",
-    },
+    // {
+    //   title: "Full Stack Intern",
+    //   organization: "Tatvasoft(virtual)",
+    //   period: "2025 - continue",
+    //   description:
+    //     "Developed full-stack web applications.",
+    // },
     {
       title: "Software Engineering Intern",
       organization: "IBM(virtual)",
-      period: "2025 - continue",
+      period: "one-month",
       description:
         "contributed to AI-driven features for customer analytics.",
     },
