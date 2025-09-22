@@ -52,7 +52,7 @@ const Projects = () => {
       ],
     },
     {
-      title: "Modern E-commerce Platform",
+      title: "Phonemax E-commerce Platform",
       description:
         "A full-featured e-commerce web application for a new mobile brand, with product catalog, cart, orders, and secure authentication.",
       detailedDescription:
@@ -61,7 +61,7 @@ const Projects = () => {
       category: "Web",
       tech: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/Darshitvara/",
-      demo: "https://ecommerce-website.darshitvara.me/",
+      demo: "https://phonemax.darshitvara.me/",
       featured: true,
       timeline: "1 months",
       teamSize: "1 developers",
