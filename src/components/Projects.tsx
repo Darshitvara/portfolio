@@ -11,6 +11,7 @@ import { Github, ExternalLink, Calendar, Users, Zap } from "lucide-react";
 import ecommerceImg from "../assets/ecommerce.png";
 import portfolioImg from "../assets/portfolio.png";
 import collabpointImg from "../assets/collab-point.png";
+import auctionPro from "../assets/auction-pro.png";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
@@ -31,6 +32,38 @@ const Projects = () => {
     //   teamSize: '4 developers',
     //   highlights: ['90% accuracy in deadline prediction', '40% increase in user productivity', 'Real-time collaboration features']
     // },
+    {
+      title: "Real-Time Auction System",
+      description:
+        "A comprehensive online auction platform with real-time bidding, user authentication, and admin dashboard for seamless auction management.",
+      detailedDescription:
+        "This full-stack auction system enables users to participate in live auctions with real-time bidding capabilities. The platform features secure user authentication, dynamic auction listings, live bid updates via WebSocket connections, and comprehensive admin controls. Users can register, browse active auctions, place bids in real-time, and receive instant notifications. The admin dashboard allows auction creation, management, and monitoring with detailed analytics. The system includes automated auction scheduling, winner announcements, and toast notifications for enhanced user experience.",
+      image: auctionPro,
+      category: "Full-Stack Web Application",
+      tech: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Socket.IO",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+      github: "https://github.com/Darshitvara/autionpro",
+      demo: "https://auctionpro.darshitvara.me",
+      featured: true,
+      timeline: "2 months",
+      teamSize: "1 developer",
+      highlights: [
+        "Real-time bidding with Socket.IO integration",
+        "Responsive design with smooth animations",
+        "Secure JWT authentication system",
+        "Admin dashboard with auction management",
+        "Optimized production build with 68% bundle size reduction",
+        "Toast notifications for enhanced UX",
+      ],
+    },
     {
       title: "Real-time Collaboration Platform",
       description:
