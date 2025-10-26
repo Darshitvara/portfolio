@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,121 +13,108 @@ import portfolioImg from "../assets/portfolio.png";
 import collabpointImg from "../assets/collab-point.png";
 import auctionPro from "../assets/auction-pro.png";
 
+interface Project {
+  title: string;
+  description: string;
+  detailedDescription: string;
+  image: string;
+  category: string;
+  tech: string[];
+  github: string;
+  demo: string;
+  featured: boolean;
+  timeline: string;
+  teamSize: string;
+  highlights: string[];
+}
+
+const PROJECTS: Project[] = [
+  {
+    title: "Real-Time Auction System",
+    description:
+      "A comprehensive online auction platform with real-time bidding, user authentication, and admin dashboard for seamless auction management.",
+    detailedDescription:
+      "This full-stack auction system enables users to participate in live auctions with real-time bidding capabilities. The platform features secure user authentication, dynamic auction listings, live bid updates via WebSocket connections, and comprehensive admin controls. Users can register, browse active auctions, place bids in real-time, and receive instant notifications. The admin dashboard allows auction creation, management, and monitoring with detailed analytics. The system includes automated auction scheduling, winner announcements, and toast notifications for enhanced user experience.",
+    image: auctionPro,
+    category: "Full-Stack Web Application",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    github: "https://github.com/Darshitvara/autionpro",
+    demo: "https://auctionpro.darshitvara.me",
+    featured: true,
+    timeline: "2 months",
+    teamSize: "1 developer",
+    highlights: [
+      "Real-time bidding with Socket.IO integration",
+      "Responsive design with smooth animations",
+      "Secure JWT authentication system",
+      "Admin dashboard with auction management",
+      "Optimized production build with 68% bundle size reduction",
+      "Toast notifications for enhanced UX",
+    ],
+  },
+
+  {
+    title: "Phonemax E-commerce Platform",
+    description:
+      "A full-featured e-commerce web application for a new mobile brand, with product catalog, cart, orders, and secure authentication.",
+    detailedDescription:
+      "This modern e-commerce solution is designed for a brand-new mobile company, providing a seamless shopping experience. Features include dynamic product listings, add-to-cart functionality, user registration/login, order tracking, admin dashboard for inventory and orders, and dummy payment gateway integration. The frontend is highly responsive with modern animations and UI components. Built with scalability and security in mind.",
+    image: ecommerceImg,
+    category: "Full-Stack Web Application",
+    tech: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/Darshitvara/",
+    demo: "https://phonemax.darshitvara.me/",
+    featured: true,
+    timeline: "1 month",
+    teamSize: "1 developer",
+    highlights: [
+      "Fully functional cart & checkout",
+      "Admin panel for managing products/orders",
+      "JWT-based authentication and authorization",
+    ],
+  },
+  {
+    title: "Portfolio ",
+    description:
+      "A modern personal portfolio website showcasing my projects, skills, blogs, and contact information.",
+    detailedDescription:
+      "This personal developer portfolio website is designed to present my professional profile, projects, and technical skills in an engaging and modern format. Built with React and Tailwind CSS for a sleek, responsive design, it features animated sections, dynamic project modals, and a blog section powered by Markdown. The site includes filtering for projects, social media integration, and a contact form. Deployed on Vercel for fast global performance and continuous deployment from GitHub.",
+    image: portfolioImg,
+    category: "Website",
+    tech: ["React", "Tailwind CSS"],
+    github: "https://github.com/Darshitvara/",
+    demo: "https://www.darshitvara.me/",
+    featured: true,
+    timeline: "1 month",
+    teamSize: "1 developer",
+    highlights: [
+      "One-click deployment to vercel Hosting",
+      "Custom domain and SEO-friendly pages",
+    ],
+  },
+];
+
 const Projects = () => {
   const [filter, setFilter] = useState("All");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects = [
-    // {
-    //   title: 'AI-Powered Task Manager',
-    //   description: 'A smart productivity app that uses machine learning to prioritize tasks and predict completion times.',
-    //   detailedDescription: 'This comprehensive task management application leverages artificial intelligence to revolutionize productivity. The system analyzes user behavior patterns, task complexity, and historical completion data to provide intelligent task prioritization. Features include automated deadline suggestions, workload balancing, smart notifications, and productivity analytics. The ML model continuously learns from user interactions to improve accuracy over time.',
-    //   image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-    //   category: 'AI/ML',
-    //   tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-    //   github: 'https://github.com/Darshitvara/',
-    //   demo: 'https://ai-task-manager-demo.com',
-    //   featured: true,
-    //   timeline: '3 months',
-    //   teamSize: '4 developers',
-    //   highlights: ['90% accuracy in deadline prediction', '40% increase in user productivity', 'Real-time collaboration features']
-    // },
-    {
-      title: "Real-Time Auction System",
-      description:
-        "A comprehensive online auction platform with real-time bidding, user authentication, and admin dashboard for seamless auction management.",
-      detailedDescription:
-        "This full-stack auction system enables users to participate in live auctions with real-time bidding capabilities. The platform features secure user authentication, dynamic auction listings, live bid updates via WebSocket connections, and comprehensive admin controls. Users can register, browse active auctions, place bids in real-time, and receive instant notifications. The admin dashboard allows auction creation, management, and monitoring with detailed analytics. The system includes automated auction scheduling, winner announcements, and toast notifications for enhanced user experience.",
-      image: auctionPro,
-      category: "Full-Stack Web Application",
-      tech: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Socket.IO",
-        "Vite",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
-      github: "https://github.com/Darshitvara/autionpro",
-      demo: "https://auctionpro.darshitvara.me",
-      featured: true,
-      timeline: "2 months",
-      teamSize: "1 developer",
-      highlights: [
-        "Real-time bidding with Socket.IO integration",
-        "Responsive design with smooth animations",
-        "Secure JWT authentication system",
-        "Admin dashboard with auction management",
-        "Optimized production build with 68% bundle size reduction",
-        "Toast notifications for enhanced UX",
-      ],
-    },
-    {
-      title: "Real-time Collaboration Platform",
-      description:
-        "A web application enabling real-time document editing for remote teams.",
-      detailedDescription:
-        "A comprehensive collaboration suite designed for modern remote teams. The platform combines real-time document editing and project management tools. Built with scalability in mind, it supports thousands of concurrent users with millisecond-level synchronization. Features include role-based permissions, integration APIs, and advanced security measures.",
-      image: collabpointImg,
-      category: "Web",
-      tech: ["react.js", "WebRTC", "Socket.io", "Porstgresql"],
-      github: "https://github.com/Darshitvara/",
-      demo: "https://colab-point.darshitvara.me/",
-      featured: true,
-      timeline: "1 months",
-      teamSize: "1 developer",
-      highlights: [
-        "Sub-100ms latency",
-        "99.9% uptime",
-        "End-to-end encryption",
-      ],
-    },
-    {
-      title: "Phonemax E-commerce Platform",
-      description:
-        "A full-featured e-commerce web application for a new mobile brand, with product catalog, cart, orders, and secure authentication.",
-      detailedDescription:
-        "This modern e-commerce solution is designed for a brand-new mobile company, providing a seamless shopping experience. Features include dynamic product listings, add-to-cart functionality, user registration/login, order tracking, admin dashboard for inventory and orders, and dummy payment gateway integration. The frontend is highly responsive with modern animations and UI components. Built with scalability and security in mind.",
-      image: ecommerceImg,
-      category: "Web",
-      tech: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB"],
-      github: "https://github.com/Darshitvara/",
-      demo: "https://phonemax.darshitvara.me/",
-      featured: true,
-      timeline: "1 months",
-      teamSize: "1 developers",
-      highlights: [
-        "Fully functional cart & checkout",
-        "Admin panel for managing products/orders",
-        "JWT-based authentication and authorization",
-      ],
-    },
-    {
-      title: "Portfolio ",
-      description:
-        "A modern personal portfolio website showcasing my projects, skills, blogs, and contact information.",
-      detailedDescription:
-        "This personal developer portfolio website is designed to present my professional profile, projects, and technical skills in an engaging and modern format. Built with React and Tailwind CSS for a sleek, responsive design, it features animated sections, dynamic project modals, and a blog section powered by Markdown. The site includes filtering for projects, social media integration, and a contact form. Deployed on Vercel for fast global performance and continuous deployment from GitHub.",
-      image: portfolioImg,
-      category: "Web",
-      tech: ["React", "Tailwind CSS"],
-      github: "https://github.com/Darshitvara/",
-      demo: "https://www.darshitvara.me/",
-      featured: true,
-      timeline: "1 months",
-      teamSize: "1 developers",
-      highlights: [
-        "One-click deployment to vercel Hosting",
-        "Custom domain and SEO-friendly pages",
-      ],
-    },
-  ];
-
-  const categories = ["All", ...new Set(projects.map((p) => p.category))];
-  const filteredProjects =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))],
+    []
+  );
+  const filteredProjects = useMemo(
+    () => (filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter)),
+    [filter]
+  );
 
   return (
     <section id="projects" className="py-20">
@@ -145,17 +132,18 @@ const Projects = () => {
           </div>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-in-left">
+          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-in-left" role="tablist" aria-label="Project categories">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={filter === category ? "default" : "outline"}
                 onClick={() => setFilter(category)}
+                aria-pressed={filter === category}
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === category
                     ? "bg-accent hover:bg-accent/90 text-accent-foreground"
                     : "hover:border-accent hover:text-accent-foreground"
-                  // : 'hover:border-accent hover:text-accent'
+                  // : 'hover;border-accent hover:text-accent'
                 }`}
               >
                 {category}
@@ -179,7 +167,9 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} preview screenshot`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -270,7 +260,8 @@ const Projects = () => {
               <div className="space-y-6">
                 <img
                   src={selectedProject.image}
-                  alt={selectedProject.title}
+                  alt={`${selectedProject.title} larger screenshot`}
+                  decoding="async"
                   className="w-full h-64 object-cover rounded-lg"
                 />
 
