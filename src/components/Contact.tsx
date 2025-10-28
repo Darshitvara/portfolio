@@ -102,21 +102,20 @@ const Contact = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Get In <span className="text-gradient">Touch</span>
+              Say <span className="text-gradient">hi</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind? Let's discuss how we can work together
-            </p>
+            {/* <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              I usually reply within 24–48 hours. Tip: tell me what you’re building or which project you liked.
+            </p> */}
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 animate-slide-in-left">
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">Let's connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in hearing about new opportunities, 
-                discussing innovative projects, or simply connecting with fellow developers. 
-                Feel free to reach out!
+                I’m open to internships, project ideas, or just a quick chat about web dev. 
+                Feel free to reach out—short messages are totally fine!
               </p>
 
               <div className="space-y-6">
@@ -141,10 +140,9 @@ const Contact = () => {
 
               {/* Additional Info */}
               <div className="mt-8 p-6 bg-card rounded-lg border border-border">
-                <h4 className="font-semibold mb-2">Quick Response Time</h4>
+                <h4 className="font-semibold mb-2">Response time</h4>
                 <p className="text-sm text-muted-foreground">
-                  I typically respond to messages within 24 hours. 
-                  For urgent inquiries, feel free to reach out directly via email.
+                  I usually reply within 24–48 hours. For urgent messages, email works best.
                 </p>
               </div>
             </div>
@@ -166,7 +164,7 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          placeholder="Your full name"
+                          placeholder="Your name"
                           className="transition-all duration-300 focus:border-accent"
                         />
                       </div>
@@ -179,7 +177,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          placeholder="your.email@example.com"
+                          placeholder="you@example.com"
                           className="transition-all duration-300 focus:border-accent"
                         />
                       </div>
@@ -193,7 +191,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        placeholder="What's this about?"
+                        placeholder="What’s this about?"
                         className="transition-all duration-300 focus:border-accent"
                       />
                     </div>
@@ -206,7 +204,7 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         required
-                        placeholder="Tell me about your project or just say hello!"
+                        placeholder="Tell me about your project or just say hello. Short is fine."
                         rows={6}
                         className="transition-all duration-300 focus:border-accent resize-none"
                       />
@@ -218,7 +216,7 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-6 text-lg font-semibold"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'Sending…' : 'Send and I’ll reply soon'}
                     </Button>
                   </form>
                 </CardContent>

@@ -15,21 +15,24 @@ const TechStack = () => {
       { name: 'TypeScript', level: 'Advanced', experience: '3 years', projects: 12 },
       { name: 'Python', level: 'Intermediate', experience: '2 years', projects: 8 },
       { name: 'Java', level: 'Intermediate', experience: '2 years', projects: 6 },
-      { name: 'C++', level: 'Beginner', experience: '1 year', projects: 3 }
     ],
     frameworks: [
+      // Frontend
       { name: 'React', level: 'Advanced', experience: '3 years', projects: 12 },
       { name: 'Next.js', level: 'Intermediate', experience: '2 years', projects: 8 },
-      { name: 'Vue.js', level: 'Intermediate', experience: '1.5 years', projects: 5 },
-      { name: 'Express.js', level: 'Intermediate', experience: '2 years', projects: 7 },
-      { name: 'Django', level: 'Beginner', experience: '6 months', projects: 2 }
+      // Backend
+      { name: 'Express.js', level: 'Advanced', experience: '2+ years', projects: 9 },
+      { name: 'NestJS', level: 'Intermediate', experience: '1 year', projects: 4 },
+      { name: 'Socket.IO', level: 'Intermediate', experience: '1.5 years', projects: 5 },
     ],
     tools: [
       { name: 'Git & GitHub', level: 'Advanced', experience: '4 years', projects: 20 },
-      { name: 'Docker', level: 'Intermediate', experience: '1 year', projects: 4 },
-      { name: 'AWS', level: 'Beginner', experience: '6 months', projects: 2 },
+      { name: 'Docker', level: 'Intermediate', experience: '1+ year', projects: 6 },
+      { name: 'GitHub Actions', level: 'Intermediate', experience: '1 year', projects: 4 },
+      { name: 'PostgreSQL', level: 'Intermediate', experience: '1.5 years', projects: 5 },
       { name: 'MongoDB', level: 'Intermediate', experience: '2 years', projects: 6 },
-      { name: 'PostgreSQL', level: 'Intermediate', experience: '1.5 years', projects: 5 }
+      { name: 'Redis', level: 'Beginner', experience: '6 months', projects: 2 },
+      { name: 'Nginx', level: 'Beginner', experience: '6 months', projects: 2 },
     ]
   };
 
@@ -66,7 +69,7 @@ const TechStack = () => {
             Technologies & Skills
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of the technologies, frameworks, and tools I've mastered throughout my journey.
+            Tools I use to build reliable backends and clean, accessible UIs.
           </p>
         </div>
 

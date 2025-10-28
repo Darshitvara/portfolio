@@ -3,14 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 const About = () => {
   const skills = [
     {
-      category: "Frontend",
-      items: ["React", "TypeScript", "Tailwind CSS","Bootstrap"],
+      category: "Backend",
+      items: ["Node.js", "Express", "NestJS", "PostgreSQL", "MongoDB", "Redis"],
     },
     {
-      category: "Backend",
-      items: ["Node.js", "Python", "PostgreSQL", "MongoDB"],
+      category: "Frontend",
+      items: ["React", "TypeScript", "Tailwind CSS", "Bootstrap"],
     },
-    { category: "Tools", items: ["Git", "Docker", "AWS" ,"Cloudfare"] },
+    { category: "Tools", items: ["Git", "Docker", "GitHub Actions", "AWS", "Cloudflare"] },
     {
       category: "AI/ML",
       items: ["OpenAI API"],
@@ -50,10 +50,9 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               About <span className="text-gradient">Me</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A passionate computer science student with a drive to create
-              innovative solutions
-            </p>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Building full‑stack products with a slight backend lean—APIs, data modeling, auth, performance, and thoughtful UIs.
+                </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -61,24 +60,20 @@ const About = () => {
             <div className="animate-slide-in-left">
               <h3 className="text-2xl font-bold mb-6">My Journey</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  I'm a final-year Computer Science student at the University of
-                  Technology, where I've developed a deep passion for software
-                  engineering and artificial intelligence. My journey began with
-                  curiosity about how technology shapes our world.
-                </p>
-                <p>
-                  Through internships, personal projects, and academic pursuits,
-                  I've gained experience in full-stack development, machine
-                  learning, and collaborative software development. I believe in
-                  writing clean, efficient code and creating user-centered
-                  solutions.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring new
-                  technologies, contributing to open-source projects, or sharing
-                  knowledge with fellow students as a teaching assistant.
-                </p>
+                  <p>
+                    My journey began with curiosity about how technology shapes our world.
+                  </p>
+                  <p>
+                    I started building because I wanted tools people would actually use. Early projects were messy, but they taught me how systems fail, and how to make them stable and usable.
+                  </p>
+                  <p>
+                    These days I split time between Node.js services (clean REST APIs, auth, data modeling, logs/metrics) and React UIs (accessible, responsive, and simple to navigate).
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+                    <div className="p-3 rounded-md border bg-card">Best at: clear API contracts and sensible UI flows</div>
+                    <div className="p-3 rounded-md border bg-card">Superpower: debugging race conditions, timeouts, and weird UI states</div>
+                    <div className="p-3 rounded-md border bg-card">Non‑tech: chess + chai breaks</div>
+                  </div>
               </div>
 
               {/* Core Values */}
@@ -86,10 +81,10 @@ const About = () => {
                 <h4 className="text-lg font-semibold mb-4">Core Values</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    "Innovation",
-                    "Collaboration",
-                    "Continuous Learning",
-                    "User-Centric Design",
+                    "Clarity over complexity",
+                    "Ship small, learn fast",
+                    "Empathy for users & teammates",
+                    "Craft and curiosity",
                   ].map((value) => (
                     <div key={value} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>

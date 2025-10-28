@@ -21,9 +21,10 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">
             Final-Year Computer Science Student
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-3 max-w-2xl mx-auto">
             Passionate about full-stack development, AI, and creating innovative solutions that make a difference.
           </p>
+          {/* <p className="text-sm text-muted-foreground mb-8">Now: a real‑time auction app (WebSockets, MongoDB, Docker, React).</p> */}
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
@@ -31,20 +32,20 @@ const Hero = () => {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
             >
-              <a href="#projects">View My Work</a>
+              <a href="#projects">See my work</a>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               asChild
             >
-              <a href="#contact">Get In Touch</a>
+              <a href="#about">How I build</a>
             </Button>
           </div>
 
           {/* Scroll indicator */}
           <div className="animate-bounce ">
-            <a href="#about" className="inline-flex items-center m-4  text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#about" className="inline-flex items-center  text-muted-foreground hover:text-foreground transition-colors">
               <span className="mr-2">Scroll to explore</span>
               <ArrowDown size={20} />
             </a>

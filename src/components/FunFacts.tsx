@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Coffee, Music } from "lucide-react";
+// removed unused icons
 import {
   Code,
   Server,
@@ -141,28 +140,24 @@ const FunFacts = () => {
 
   const hobbies = [
   {
-    name: "Reading Psychology",
+    name: "Psychology",
     description: "Exploring psychological concepts and theories to understand human behavior and the mind.",
     icon: "🧠",
-    level: "Intermediate",
   },
   {
     name: "Chess",
     description: "Strategic thinking and problem solving.",
     icon: "♟️",
-    level: "Advanced",
   },
   {
     name: "Martial Arts",
     description: "Practicing discipline, focus, and physical fitness through martial arts training.",
     icon: "🥋",
-    level: "Intermediate",
   },
   {
     name: "Networking",
     description: "Building connections and engaging with like-minded professionals and communities.",
     icon: "🌐",
-    level: "Intermediate",
   },
   // {
   //   name: "Listening to Music",
@@ -186,16 +181,18 @@ const FunFacts = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-playfair font-bold mb-4 text-gradient">
-            Fun Facts & Personal Side
+            Hobbies & Interests
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the code. Discover my interests and
-            preferences.
-          </p>
+          {/* <h2 className="text-4xl font-playfair font-bold mb-4 text-gradient">
+            Personal Side
+          </h2> */}
+          {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Get to know the person behind the code. 
+          </p> */}
         </div>
 
         {/* This or That Toggle Cards */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-2xl font-playfair font-semibold text-center mb-8">
             This or That?
           </h3>
@@ -231,13 +228,13 @@ const FunFacts = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Hobbies & Interests */}
         <div className="mb-16">
-          <h3 className="text-2xl font-playfair font-semibold text-center mb-8">
+          {/* <h3 className="text-2xl font-playfair font-semibold text-center mb-8">
             Hobbies & Interests
-          </h3>
+          </h3> */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {hobbies.map((hobby, index) => (
               <Card
@@ -255,7 +252,6 @@ const FunFacts = () => {
                   <p className="text-muted-foreground text-sm mb-3">
                     {hobby.description}
                   </p>
-                  <Badge variant="outline">{hobby.level}</Badge>
                 </CardContent>
               </Card>
             ))}
@@ -337,7 +333,7 @@ const FunFacts = () => {
             </Card>
           </div>
         </div> */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <h3 className="text-2xl font-playfair font-semibold mb-6">
             Random Facts
           </h3>
@@ -391,7 +387,7 @@ const FunFacts = () => {
               </p>
             </Card>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

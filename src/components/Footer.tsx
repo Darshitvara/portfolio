@@ -76,10 +76,11 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center space-y-2">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} Darshit Vara. Designed and built with passion using React & Tailwind CSS.
+              © {currentYear} Darshit Vara. Built with React and Tailwind.
             </p>
+            <p className="text-primary-foreground/50 text-xs">Last updated Oct 2025 </p>
           </div>
         </div>
       </div>
