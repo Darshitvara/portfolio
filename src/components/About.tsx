@@ -72,7 +72,7 @@ const About = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
                     <div className="p-3 rounded-md border bg-card">Best at: clear API contracts and sensible UI flows</div>
                     <div className="p-3 rounded-md border bg-card">Superpower: debugging race conditions, timeouts, and weird UI states</div>
-                    <div className="p-3 rounded-md border bg-card">Non‑tech: chess + chai breaks</div>
+                    <div className="p-3 rounded-md border bg-card">Non‑tech: chess + reading + meditation</div>
                   </div>
               </div>
 
