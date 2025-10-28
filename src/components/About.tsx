@@ -4,7 +4,7 @@ const About = () => {
   const skills = [
     {
       category: "Backend",
-      items: ["Node.js", "Express", "NestJS", "PostgreSQL", "MongoDB", "Redis"],
+      items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"],
     },
     {
       category: "Frontend",
@@ -18,13 +18,7 @@ const About = () => {
   ];
 
   const experiences = [
-    // {
-    //   title: "Full Stack Intern",
-    //   organization: "Tatvasoft(virtual)",
-    //   period: "2025 - continue",
-    //   description:
-    //     "Developed full-stack web applications.",
-    // },
+
     {
       title: "Software Engineering Intern",
       organization: "IBM(virtual)",
@@ -32,13 +26,7 @@ const About = () => {
       description:
         "contributed to AI-driven features for customer analytics.",
     },
-    // ,
-    // {
-    //   title: 'Teaching Assistant',
-    //   organization: 'University CS Department',
-    //   period: '2023 - Present',
-    //   description: 'Assisted in teaching Data Structures and Algorithms, mentoring 50+ students.'
-    // }
+
   ];
 
   return (
