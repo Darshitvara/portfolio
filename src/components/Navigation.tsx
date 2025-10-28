@@ -1,13 +1,16 @@
 
-import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from './ThemeProvider';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,12 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close the mobile menu when route changes
+  useEffect(() => {
+    if (isOpen) setIsOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, location.hash]);
 
   const navItems = [
     { href: '#home', label: 'Home' },
@@ -78,36 +87,39 @@ const Navigation = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav"
+              onClick={() => setIsOpen(true)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              <Menu size={24} />
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col space-y-4">
+        {/* Mobile Navigation Menu - Sheet */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetContent side="right" className="md:hidden w-11/12 sm:max-w-xs" id="mobile-nav" aria-label="Mobile navigation">
+            <div className="mt-8 flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors duration-200 py-2"
+                  className="text-lg text-foreground/90 hover:text-foreground transition-colors duration-200 py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button 
+              <Button
                 asChild
-                className="bg-accent hover:bg-accent/90 text-accent-foreground mt-4 w-full"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground mt-6"
+                onClick={() => setIsOpen(false)}
               >
                 <a href="#contact">Get In Touch</a>
               </Button>
             </div>
-          </div>
-        )}
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );
