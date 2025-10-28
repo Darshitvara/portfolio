@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Menu, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from './ThemeProvider';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
@@ -99,6 +99,10 @@ const Navigation = () => {
         {/* Mobile Navigation Menu - Sheet */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetContent side="right" className="md:hidden w-11/12 sm:max-w-xs" id="mobile-nav" aria-label="Mobile navigation">
+            {/* Radix a11y: DialogContent requires a DialogTitle */}
+            <SheetHeader className="sr-only">
+              <SheetTitle>Mobile navigation</SheetTitle>
+            </SheetHeader>
             <div className="mt-8 flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
