@@ -38,7 +38,7 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               asChild
-              className="transition-colors hover:border-accent"
+              className="transform transition-transform duration-300 ease-out hover:scale-105 hover:border-accent hover:bg-transparent hover:text-foreground motion-reduce:transform-none motion-reduce:transition-none"
             >
               <a href="#about">About me</a>
             </Button>
@@ -46,6 +46,7 @@ const Hero = () => {
 
           {/* Scroll indicator */}
           <div className="animate-bounce ">
+
             <a href="#about" className="inline-flex items-center  text-muted-foreground hover:text-foreground transition-colors">
               <span className="mr-2">Scroll to explore</span>
               <ArrowDown size={20} />
