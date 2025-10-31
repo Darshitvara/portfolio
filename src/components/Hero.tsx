@@ -38,8 +38,9 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               asChild
+              className="hover:bg-accent hover:text-accent-foreground transform transition-transform hover:scale-105"
             >
-              <a href="#about">How I build</a>
+              <a href="#about">About me</a>
             </Button>
           </div>
 
