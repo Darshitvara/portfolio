@@ -38,7 +38,7 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               asChild
-              className="hover:bg-accent hover:text-accent-foreground transform transition-transform hover:scale-105"
+              className="transition-colors hover:border-accent"
             >
               <a href="#about">About me</a>
             </Button>
