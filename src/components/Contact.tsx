@@ -164,6 +164,8 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
+                          minLength={2}
                           placeholder="Your name"
                           className="transition-all duration-300 focus:border-accent"
                         />
@@ -177,6 +179,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
                           placeholder="you@example.com"
                           className="transition-all duration-300 focus:border-accent"
                         />
@@ -190,7 +193,9 @@ const Contact = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
-                        required
+                          required
+                          aria-required="true"
+                          minLength={3}
                         placeholder="What’s this about?"
                         className="transition-all duration-300 focus:border-accent"
                       />
@@ -204,6 +209,8 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         required
+                        aria-required="true"
+                        minLength={10}
                         placeholder="Tell me about your project or just say hello. Short is fine."
                         rows={6}
                         className="transition-all duration-300 focus:border-accent resize-none"
