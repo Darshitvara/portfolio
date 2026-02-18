@@ -12,6 +12,7 @@ import ecommerceImg from "../assets/ecommerce.png";
 import portfolioImg from "../assets/portfolio.png";
 import collabpointImg from "../assets/collab-point.png";
 import auctionPro from "../assets/auction-pro.png";
+import jsVisualizerImg from "../assets/js-visualizer.png";
 
 interface Project {
   title: string;
@@ -29,6 +30,36 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  {
+    title: "Javascript Event Loop Visualizer",
+    description:
+      "An interactive platform where developers write JavaScript and watch it execute in real time — call stack, event loop, microtask/macrotask queues, and Web APIs all visualized step by step.",
+    detailedDescription:
+      "An interactive platform where developers write JavaScript and watch it execute in real time — call stack, event loop, microtask/macrotask queues, and Web APIs all visualized step by step. Powered by a custom 1,100+ line tree-walking interpreter with full async/await and Promise support. Features dual runtime modes — browser event loop vs Node.js 6-phase model — so users can see exactly why Promise.then runs before setTimeout, or how process.nextTick differs from setImmediate. Includes an integrated Monaco editor with step-through playback controls and 6 educational pages with a guided learning path, all wrapped in a \"Midnight Ember\" glassmorphism theme across 39 source files at 182 KB gzipped.",
+    image: jsVisualizerImg,
+    category: "Interactive Educational Web App",
+    tech: [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Tailwind CSS v4",
+      "Zustand",
+      "Framer Motion",
+      "Monaco Editor",
+    ],
+    github: "https://github.com/Darshitvara/JS-runtime-lab",
+    demo: "https://js-visualizer.darshitvara.me",
+    featured: true,
+    timeline: "3 months",
+    teamSize: "1 developer",
+    highlights: [
+      "Custom JS interpreter with async/await, classes & Promise simulation",
+      "Dual runtime: Browser loop vs Node.js 6-phase event loop",
+      "Integrated Monaco editor with step-through playback controls",
+      "6 educational pages with guided learning path",
+      "\"Midnight Ember\" glassmorphism theme · 39 source files · 182 KB gzipped",
+    ],
+  },
   {
     title: "Real-Time Auction System",
     description:
